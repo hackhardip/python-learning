@@ -1,0 +1,9 @@
+def is_unique(str):
+  if len(str)==len(set(str)):
+    return True
+  else:
+    return False
+
+print(is_unique("hhh"))
+
+
