@@ -1,0 +1,16 @@
+
+def str_normalize(string):
+  string = string.replace(" ","")
+  return string.lower()
+
+def is_unique(string):
+  str_normalize(string)
+  d = dict()
+  for i in string:
+    if i in d:
+      return False
+    else:
+      d[i] = 1;
+  return True
+
+print(is_unique("Hardiip"))
