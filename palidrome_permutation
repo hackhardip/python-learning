@@ -1,0 +1,27 @@
+pal_per = "Tact Coa"
+not_pal_per = "This is not valid permutation"
+
+def is_pel_perm(str):
+    str = str.replace(" ","")
+    str = str.lower()
+    
+    d = {}
+    
+    
+    for i in str:
+        if i in d:
+            d[i] += 1
+        else:
+            d[i] =  1
+           
+    count = 0        
+    for k ,v in d.items():
+        if v%2 == 0 and count == 0:
+            count += 1 
+        elif v%2!=0 and count != 0 :
+            return False
+    return True
+    
+print(is_pel_perm(pal_per))
+print(is_pel_perm(not_pal_per))
+            
