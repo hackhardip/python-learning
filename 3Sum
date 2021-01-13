@@ -36,6 +36,8 @@ Constraints:
 
 
 */
+# Time complexity : O(N^2)
+# space complexity: O(1)
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
@@ -46,6 +48,7 @@ public:
             if(nums[i] >0){
                 return ans;}
             if(i >0 && nums[i]==nums[i-1]){continue;}
+            #ignore duplicates
             int start = i +1;
             int end = nums.size()-1;
             while(start< end){
@@ -62,10 +65,12 @@ public:
                 ans.push_back(app);
                 while(start < end && nums[start] == nums[start+1]){
                     start++;
+                    #ignore duplicates
                     
                 }
                 while (start < end && nums[end] == nums[end-1]){
                     end--;
+                    #ignore duplicates
                     
                 }
                 start++;
